@@ -12,11 +12,8 @@ import Mustache from 'mustache';
  * In case there is no entry for this key, it returns the key.
  * @returns t(key: string): any function
  */
-const useTranslation = ( ) => {
+const useTranslation = (i18nObj: I18N) => {
 	const router = useRouter();
-	let i18nObj: I18N;
-
-	i18nObj = i18n() as I18N;
 
 	const translations: Dictionary = i18nObj.translations;
 	const defaultLang: string = i18nObj.defaultLang;  ;

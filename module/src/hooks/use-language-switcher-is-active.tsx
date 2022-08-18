@@ -9,9 +9,7 @@ import { I18N } from '../types';
  * @param currentLang string the language to check. Needs to equal the key in i18n/index.
  * @returns boolean react-state
  */
-export default function useLanguageSwitcherIsActive(currentLang: string) {
-	let i18nObj: I18N;
-	i18nObj = i18n() as I18N;
+export default function useLanguageSwitcherIsActive(i18nObj: I18N, currentLang: string) {
 	const defaultLang: string = i18nObj.defaultLang;
 	const router = useRouter();
 	const [isActive, setIsActive] = useState<boolean>(false);

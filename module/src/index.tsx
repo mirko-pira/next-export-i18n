@@ -2,7 +2,6 @@
  * The entry files for the separated hooks
  */
 
-import { i18n as userland } from "./../../i18n/index";
 import { Dictionary, I18N } from "./types";
 
 /**
@@ -44,9 +43,8 @@ const getDefaultLanguage = (userI18n: I18N): string => {
  * to the custom hooks
  * @returns the translations and the default language as defined in "i18n/index"
  */
-const i18n = (): I18N | Error => {
+const i18n = (userI18n: I18N): I18N | Error => {
   // cast to be typsafe
-  const userI18n = userland as I18N;
   if (Object.keys(userI18n.translations).length < 1) {
     throw new Error(
       `Missing translations. Did you import and add the tranlations in 'i18n/index.js'?`
